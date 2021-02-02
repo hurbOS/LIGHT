@@ -18,7 +18,7 @@ fn help() {
     println!("{}", s.color(Color::Yellow)); 
     print!("    Commands:
 
-           Help: --help
+           Help: -h/--help
            Shows this menu.
 
            Update: --update/-u <optional>
@@ -33,7 +33,7 @@ fn command_parse() {
     let args: Vec<String> = env::args().collect();
     let command = &args[1];
     match &command[..] {
-        "--help" => {
+        "-h" | "--help" => {
             help();
         },
         "-i" | "--install" => {
