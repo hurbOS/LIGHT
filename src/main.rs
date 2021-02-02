@@ -1,16 +1,34 @@
 use std::env;
 
 fn help() {
-    print!("LIGHT Help\n\n\nCommands:\n\nInstall: --install/-i [package]\nSearch, download, and install a package from enabled repositories.")
+    print!("LIGHT Help
+
+
+           Commands:
+
+           Help: --help
+           Shows this menu.
+
+           Update: --update/-u <optional>
+           Update repositories, search for package updates, optionally specify packages.
+
+           Install: --install/-i <package>
+           Search, download, and install a package from enabled repositories.");
 }
 
 fn command_parse() {
     let args: Vec<String> = env::args().collect();
     let command = &args[1];
-    if command == "-i" || command == "--install" {
-        print!("Test")
-    } else {
-        print!("Invalid command")
+    match &command[..] {
+        "--help" => {
+            help();
+        },
+        "-i" | "--install" => {
+            print!("test");
+        }
+        _ => {
+            print!("Invalid command, use --help\n");
+        }
     }
 }
 
