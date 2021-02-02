@@ -1,4 +1,5 @@
 use std::env;
+mod commands;
 
 fn help() {
     print!("LIGHT Help
@@ -24,7 +25,10 @@ fn command_parse() {
             help();
         },
         "-i" | "--install" => {
-            print!("test");
+            commands::install();
+        }
+        "-u" | "--update" => {
+            commands::update();
         }
         _ => {
             print!("Invalid command, use --help\n");
