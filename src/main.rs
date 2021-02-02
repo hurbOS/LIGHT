@@ -16,7 +16,7 @@ fn help() {
 
            ";
     println!("{}", s.color(Color::Yellow)); 
-    print!("Commands:
+    print!("    Commands:
 
            Help: --help
            Shows this menu.
@@ -25,7 +25,8 @@ fn help() {
            Update repositories, search for package updates, optionally specify packages.
 
            Install: --install/-i <package>
-           Search, download, and install a package from enabled repositories.");
+           Search, download, and install a package from enabled repositories.
+           ");
 }
 
 fn command_parse() {
