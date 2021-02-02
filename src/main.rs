@@ -1,11 +1,22 @@
+extern crate colorful;
 use std::env;
+use colorful::Color;
+use colorful::Colorful;
 mod commands;
 
 fn help() {
-    print!("LIGHT Help
+    let s = " 
+     _      _____ _____ _    _ _______ 
+    | |    |_   _/ ____| |  | |__   __|
+    | |      | || |  __| |__| |  | |   
+    | |      | || | |_ |  __  |  | |   
+    | |____ _| || |__| | |  | |  | |   
+    |______|_____\\_____|_|  |_|  |_|   
 
 
-           Commands:
+           ";
+    println!("{}", s.color(Color::Yellow)); 
+    print!("Commands:
 
            Help: --help
            Shows this menu.
