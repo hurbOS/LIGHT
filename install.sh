@@ -25,7 +25,6 @@ download () {
 	if command -v git
 	then
 		git clone https://github.com/hurbOS/LIGHT.git
-		build
 	else 
 		echo "Git is not installed, Please install Git before continuing. [EC-11]"
 		cleanup
@@ -46,7 +45,7 @@ build () {
 }
 
 install () {
-	[ ! -d "/etc/light" ] && sudo mkdir /usr/local/bin/light	
+	[ ! -d "/etc/light" ] && sudo mkdir /etc/light
 	if [ $? -ne 0 ] 
 	then
 		echo "Error making /etc/light [EC-31]"
@@ -60,13 +59,13 @@ install () {
 		cleanup
 		exit
 	fi
-	sudo cp ./conf/* /etc/light/
-	if [ $? -ne 0 ] 
-	then
-		echo "Error copying config files [EC-33]"
-		cleanup
-		exit
-	fi
+	#sudo cp ./conf/* /etc/light/
+	#if [ $? -ne 0 ] 
+	#then
+	#	echo "Error copying config files [EC-33]"
+	#	cleanup
+	#	exit
+	#fi
 }
 
 echo "Welcome to the LIGHT automated installer, Cloning most recent source of LIGHT from GitHub"
